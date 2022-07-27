@@ -13,7 +13,7 @@ async function getCurrentTabAPI() {
 
   if (checkUrl(dataURL)>0) {
     post_api(dataURL)
-    setTimeout(get_api, 5000)
+    //setTimeout(5000)
 
   }
   else{
@@ -38,59 +38,74 @@ function checkUrl(url) {
   }
 }
 
-  function post_api(web) {
-    loading.style.display = "block";
-    run.style.display = "block";
+function post_api(web) {
+  loading.style.display = "block";
+  run.style.display = "block";
 
-    fetch("http://127.0.0.1:8000/", {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      mode: 'same-origin',
-      body: JSON.stringify({ 'msg': web })
-    }).then(resp => {
-      if (resp.status === 200) {
-        return resp.json()
-      } else {
-        console.log("Status: " + resp.status)
-        return Promise.reject("server")
-      }
-    })
-  }
-
-  function get_api() {
-    fetch("http://127.0.0.1:8000/prediction", {
-    method: 'GET',
+  fetch("https://fnd-api.herokuapp.com/", {
+    method: 'POST',
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json"
     },
     mode: 'same-origin',
+    body: JSON.stringify({ 'msg': web })
+  }).then(resp => {
+    if (resp.status === 200) {
+      return resp.json()
+    } else {
+      throw new Error("NETWORK RESPONSE ERROR");
+      //console.log("Status: " + resp.status)
+      //return Promise.reject("server")
+    }
+  }).then(data => {
+    loading.style.display = "none";
+    run.style.display = "none";
+    let d = data.toString()
+    showData(d);
   })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("NETWORK RESPONSE ERROR");
-      }
-    })
-    .then(data => {
-      loading.style.display = "none";
-      run.style.display = "none";
+      .catch((error) => console.error("FETCH ERROR:", error));
 
-      showData(data.message);
-    })
-    .catch((error) => console.error("FETCH ERROR:", error));
-
-  showData = message => {
+  function showData (d) {
     const msjDiv = document.querySelector("#message");
     const msjElement = document.createElement("p");
-    msjElement.innerText = `Result: ${message}`;
+    msjElement.innerText = "Result: " + d;
+    console.log(msjElement.innerText)
     msjDiv.append(msjElement);
   }
 }
+
+//   function get_api() {
+//     fetch("http://127.0.0.1:8000/prediction", {
+//     method: 'GET',
+//     headers: {
+//       "Content-Type": "application/json",
+//       "Accept": "application/json"
+//     },
+//     mode: 'same-origin',
+//   })
+//     .then((response) => {
+//       if (response.ok) {
+//         return response.json();
+//       } else {
+//         throw new Error("NETWORK RESPONSE ERROR");
+//       }
+//     })
+//     .then(data => {
+//       loading.style.display = "none";
+//       run.style.display = "none";
+
+//       showData(data.message);
+//     })
+//     .catch((error) => console.error("FETCH ERROR:", error));
+
+//   showData = message => {
+//     const msjDiv = document.querySelector("#message");
+//     const msjElement = document.createElement("p");
+//     msjElement.innerText = `Result: ${message}`;
+//     msjDiv.append(msjElement);
+//   }
+// }
 
 
 getCurrentTabAPI()
