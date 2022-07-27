@@ -21,7 +21,6 @@ async function getCurrentTabAPI() {
     const msjElement = document.createElement("p");
     msjElement.innerText = `Sorry, we do not support this website.`;
     msjDiv.append(msjElement);
-    process.exit();
   }
 }
 
