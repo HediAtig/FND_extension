@@ -69,7 +69,7 @@ function post_api(web) {
   function showData (d) {
     const msjDiv = document.querySelector("#message");
     const msjElement = document.createElement("p");
-    msjElement.innerText = "Result: " + d;
+    msjElement.innerText =  d;
     console.log(msjElement.innerText)
     msjDiv.append(msjElement);
   }
