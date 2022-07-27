@@ -1,17 +1,24 @@
 {
-    "name": "Fake News Detector",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "manifest_version": 3,
-    
-    "background": {
-      "service_worker": "background.js"
-  },
+  "name": "Fake News Detector",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 3,
+  
   "action": {
-    "default_icon": "fake.png"
+    "default_icon": "fake.png",
+    "default_popup": "popup.html"
+
   },
-    "permissions": [
-      "storage",
-      "tabs"
-    ]
-  }
+  "permissions": [
+    "storage",
+    "tabs",
+    "https://fnd-api.herokuapp.com/",
+    "http://127.0.0.1:8000/",
+    "alarms",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://fnd-api.herokuapp.com/*",
+    "http://127.0.0.1:8000/*"
+  ]
+}

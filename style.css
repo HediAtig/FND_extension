@@ -1,0 +1,62 @@
+
+.container {
+    background-color: #2b3252;
+    width: 150px;
+    margin: 90px;
+    text-align: center;
+}
+
+.message {
+    margin-top: 2em;
+    font-size: 10px;
+}
+
+.run {
+    margin-top: 2em;
+    text-align: center;
+    color: #af4848;
+
+}
+
+.logo {
+    position: absolute;
+    width: 150px;
+    text-align: center;
+    bottom: 15px;
+    color: #bdc2c6;
+}
+
+.spinner-container {
+    width: 150px;
+    height: 100%;
+    z-index: 99999;
+    text-align: center;
+}
+.spinner {
+    margin: auto;
+    border: 2px solid #eee;
+    /*
+    change to dotted for something cool.
+    change width to 1px for tapered bar
+    */
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    position: center;
+    top: 45%;
+    border-radius: 50%;
+    border-right: 3px solid darkred;
+    text-align:center;
+    animation-name: spin;
+    animation-duration: 700ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
