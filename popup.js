@@ -25,13 +25,10 @@ async function getCurrentTabAPI() {
 }
 
 function checkUrl(url) {
-  let websites = ["https://www.huffpost.com/*", "https://www.aljazeera.com/", "https://www.latimes.com/",
-    "https://www.bbc.com/", "https://www.dailymail.co.uk/", "https://www.thesun.co.uk",
-    "https://www.cnbc.com/", "https://www.nbcnews.com/", "https://www.foxnews.com/",
-    "https://news.yahoo.com/"]
+  let websites = ['news.yahoo.com', 'www.foxnews.com','www.huffpost.com','www.latimes.com','www.aljazeera.com','www.bbc.com','www.dailymail.co.uk','www.thesun.co.uk','www.cnbc.com','edition.cnn.com']
 
   for (let i = 0; i < websites.length + 1; i++) {
-    if (url.includes(websites[i])) {
+    if (url.includes(websites[i-1])) {
       return i
     }
 
@@ -42,7 +39,7 @@ function post_api(web) {
   loading.style.display = "block";
   run.style.display = "block";
 
-  fetch("https://fnd-api.herokuapp.com/", {
+  fetch("http://127.0.0.1:8000/", {
     method: 'POST',
     headers: {
       "Content-Type": "application/json",
