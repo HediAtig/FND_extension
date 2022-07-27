@@ -1,8 +1,14 @@
 const run = document.querySelector(".run");
 const message = document.querySelector(".message");
 const loading = document.querySelector(".spinner");
+const fake = document.querySelector(".fake");
+const valid = document.querySelector(".valid");
+
+
 loading.style.display = "none";
 run.style.display = "none";
+fake.style.display="none"
+valid.style.display="none"
 
 
 async function getCurrentTabAPI() {
@@ -60,6 +66,12 @@ function post_api(web) {
     run.style.display = "none";
     let d = data.toString()
     showData(d);
+    if (d.includes("Fake")){
+      fake.style.display = "block";
+    }
+    else{
+      valid.style.display = "block";
+    }
   })
       .catch((error) => console.error("FETCH ERROR:", error));
 

@@ -13,12 +13,10 @@
     "storage",
     "tabs",
     "https://fnd-api.herokuapp.com/",
-    "http://127.0.0.1:8000/",
     "alarms",
     "notifications"
   ],
   "host_permissions": [
-    "https://fnd-api.herokuapp.com/*",
-    "http://127.0.0.1:8000/*"
+    "https://fnd-api.herokuapp.com/*"
   ]
 }

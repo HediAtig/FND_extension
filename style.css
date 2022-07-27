@@ -2,13 +2,21 @@
 .container {
     background-color: #2b3252;
     width: 150px;
-    margin: 90px;
+    margin: 70px;
     text-align: center;
 }
 
 .message {
-    margin-top: 2em;
+    margin-top: 4em;
     font-size: 10px;
+}
+
+.fake {
+    margin-top: 1em;
+}
+
+.valid {
+    margin-top: 1em;
 }
 
 .run {
