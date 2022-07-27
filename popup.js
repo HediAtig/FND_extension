@@ -39,7 +39,7 @@ function post_api(web) {
   loading.style.display = "block";
   run.style.display = "block";
 
-  fetch("http://127.0.0.1:8000/", {
+  fetch("https://fnd-api.herokuapp.com/", {
     method: 'POST',
     headers: {
       "Content-Type": "application/json",
