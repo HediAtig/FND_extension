@@ -26,7 +26,7 @@ async function getCurrentTabAPI() {
 
 function checkUrl(url) {
   let websites = ["https://www.huffpost.com/*", "https://www.aljazeera.com/", "https://www.latimes.com/",
-    "https://www.bbc.com/", "https://www.dailymail.co.uk/", "https://www.forbes.com/",
+    "https://www.bbc.com/", "https://www.dailymail.co.uk/", "https://www.thesun.co.uk",
     "https://www.cnbc.com/", "https://www.nbcnews.com/", "https://www.foxnews.com/",
     "https://news.yahoo.com/"]
 
