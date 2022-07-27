@@ -10,11 +10,8 @@
 
   },
   "permissions": [
-    "storage",
     "tabs",
-    "https://fnd-api.herokuapp.com/",
-    "alarms",
-    "notifications"
+    "https://fnd-api.herokuapp.com/"
   ],
   "host_permissions": [
     "https://fnd-api.herokuapp.com/*"
