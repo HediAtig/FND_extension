@@ -11,6 +11,10 @@
     font-size: 10px;
 }
 
+.error {
+    margin-top: 1em;
+}
+
 .fake {
     margin-top: 1em;
 }

@@ -5,7 +5,7 @@
   "manifest_version": 3,
   
   "action": {
-    "default_icon": "fake.png",
+    "default_icon": "./img/fake.png",
     "default_popup": "popup.html"
 
   },
